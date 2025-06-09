@@ -194,7 +194,7 @@ static void hci_event_handler(uint8_t packet_type, uint16_t channel, uint8_t *pa
             gap_connect(server_addr, server_addr_type);
             break;
         case HCI_EVENT_LE_META:
-            // wait for connection complete
+            
             switch (hci_event_le_meta_get_subevent_code(packet)) {
                 case HCI_SUBEVENT_LE_CONNECTION_COMPLETE:
                     if (state != TC_W4_CONNECT) return;
